@@ -1,0 +1,19 @@
+﻿<Window x:Class="TaxiManagementSystem.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaxiManagementSystem.Views"
+        mc:Ignorable="d"
+        Title="MainView" d:DesignWidth="640" Height="480">
+    <Grid>
+        <StackPanel Height="90" VerticalAlignment="Top" Orientation="Horizontal">
+            <Image x:Name="image" Height="90" Margin="1,0,0,0" Width="90" Source="/TaxiManagementSystem;component/Images/icon_logo.png" HorizontalAlignment="Left"/>
+            <Button x:Name="btnLocation" Content="位置服务" Width="90"/>
+            <Button x:Name="button_Copy" Content="电召服务" Width="90"/>
+            <Button x:Name="button_Copy1" Content="监管稽查" Width="90"/>
+            <Button x:Name="button_Copy2" Content="运营分析" Width="90"/>
+        </StackPanel>
+        <WebBrowser Margin="0,90,0,0"  />
+    </Grid>
+</Window>

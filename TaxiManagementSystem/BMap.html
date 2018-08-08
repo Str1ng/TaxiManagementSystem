@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #l-map {
+            height: 100%;
+            width: 88%;
+            float: left;
+            border-right: 2px solid #bcbcbc;
+        }
+
+        #r-result {
+            height: 100%;
+            width: 10%;
+            float: left;
+        }
+
+        .anchorBL {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CE44c78c410e2c801253586c748d43f6"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DistanceTool/1.2/src/DistanceTool_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+    <script type="text/javascript" src="ConfigurationMap.js"></script>
+    <script type="text/javascript" src="api.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+    <title>BMap.Net</title>
+</head>
+<body>
+
+    <div id="geo" style="display:none"></div>
+    <div id="lng" style="display:none"></div>
+    <div id="lat" style="display:none"></div>
+    <div id="allmap"></div>
+    <div id="r-result" style="display:none"></div>
+    <div id="l-result" style="display:none"></div>
+    <!--百度地图带着自己的logo，通过下面的方试可以非常简单的移除掉百度地图logo和版权说明-->
+    <input type="button" onclick="$('#map div.anchorBL').hide();" value="移除地图LOGO和版权说明" />
+</body>
+</html>
+<script type="text/javascript">
+//显示一个最简单的地图
+    var map = new BMap.Map("allmap", { enableMapClick: false });
+    var lgt = GetLgt();
+    var lat = GetLat();
+    var zoom = GetZoom();
+map.enableScrollWheelZoom();
+map.centerAndZoom(new BMap.Point(lgt, lat), zoom);
+map.addControl(new BMap.NavigationControl());
+//map.addControl(new BMap.ScaleControl());         // 添加比例尺控件
+//map.addControl(new BMap.OverviewMapControl());   //添加缩略地图控件
+</script>
